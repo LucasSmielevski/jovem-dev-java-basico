@@ -29,21 +29,5 @@ public class Exercicio3 {
 			e.printStackTrace();
 		}
 		// IllegalStateException
-		try {
-			List<Integer> n = new ArrayList<Integer>();
-			n.add(2);
-			n.add(5);
-			for (int i = 0; i < n.size(); i++) {
-				n.remove(i);
-				error(n.get(i));
-			}
-		} catch (IllegalStateException e ) {
-			e.printStackTrace();
-		}
 	}
-	
-	public static void error(int n) {
-		String txt = Integer.toString(n);
-	}
-
 }

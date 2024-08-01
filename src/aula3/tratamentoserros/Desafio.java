@@ -36,13 +36,13 @@ public class Desafio {
 				} else {
 					Item item = new Item(nomeItem, precoItem);
 					venda.itens.add(item);
+					msg += "Venda criada com sucesso para o cliente " + venda.nomeCliente + " com " + venda.itens.size() + " itens";
 				}
 			} catch (PrecoIncorretoException e) {
 				JOptionPane.showMessageDialog(null, "Erro no preço do item: " + e.getMessage(), "error", 0);
 				return adicionarItens(venda);
 			}
 		}
-		msg += "Venda criada com sucesso para o cliente " + venda.nomeCliente + " com " + venda.itens.size() + " itens";
 		return msg;
 
 	}
