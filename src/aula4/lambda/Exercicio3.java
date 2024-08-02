@@ -18,20 +18,8 @@ public class Exercicio3 {
 		alunos.add(new Aluno(3, "Gabriel", LocalDate.parse("20/06/2004", DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
 		alunos.add(new Aluno(4, "Thiago", LocalDate.parse("20/09/2005", DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
 		alunos.add(new Aluno(5, "Léo", LocalDate.parse("20/10/2003", DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
-//		alunos.add(new Aluno("Lucas"));
-//		alunos.add(new Aluno("Thiago"));
-//		alunos.add(new Aluno("Tiago"));
 
-		for (int i = 0; i < alunos.size(); i++) {
-			String primLetra = String.valueOf(alunos.get(i).nome.toUpperCase().charAt(0));
-			for (int j = 0; j < alunos.get(i).nome.length(); j++) {
-				String ultimaLetra = String.valueOf(alunos.get(i).nome.charAt(j));
-				if(ultimaLetra.equals("o") && primLetra.equals("T")) {
-					String nome = (alunos.get(i).nome);
-					alunos.removeIf(s -> nome.contains(primLetra));
-				}
-			}
-		}
+		alunos.removeIf(s -> s.nome.startsWith("T") && s.nome.endsWith("o"));
 		alunos.forEach(System.out::println);
 	}
 }
