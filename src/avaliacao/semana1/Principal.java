@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
-//FALTOU METHOD REFERENCE E MASCARA NO NOME DO CLIENTE FALTOU OS CATCH E NAO DEU TEMPO DE IMPLEMENTAR O SYSO
+//FALTOU METHOD REFERENCE E MASCARA NO NOME DO CLIENTE FALTOU OS CATCH
 public class Principal {
 
 	public static void main(String[] args) {
@@ -15,7 +15,6 @@ public class Principal {
 
 	public Principal() {
 		Cliente cliente = new Cliente();
-		Produto produto = new Produto();
 		ClientePremium clientePremium = new ClientePremium();
 		try {
 			cliente.nome = JOptionPane.showInputDialog("Digite o nome do cliente: ");
@@ -25,6 +24,8 @@ public class Principal {
 			if (cliente.nome.equalsIgnoreCase("Thiago")) {
 				clientePremium.nome = cliente.nome;
 				clientePremium.dataNascimento = cliente.dataNascimento;
+			}else {
+				clientePremium.nome = cliente.nome;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -37,6 +38,7 @@ public class Principal {
 			List<Produto> produtos = new ArrayList<Produto>();
 			int i = 0;
 			while (true) {
+				Produto produto = new Produto();
 				String nomeProduto = JOptionPane
 						.showInputDialog("Digite o nome do produto " + (i + 1) + "(Digite fim para sair):");
 				if (nomeProduto.equalsIgnoreCase("fim")) {
