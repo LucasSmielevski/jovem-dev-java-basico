@@ -13,10 +13,9 @@ public class Exercicio3 {
 		List<Integer> numeros = new ArrayList<Integer>();
 		Random aleatorio = new Random();
 		for (int i = 0; i < 50; i++) {
-			numeros.add(aleatorio.nextInt(30));
+			numeros.add(aleatorio.nextInt(100));
 		}
 		System.out.println(numeros);
-//		List<Integer> qnt25 =  
-		System.out.println(numeros.stream().filter(num -> numeros.contains(25)).mapToInt(Integer::intValue));
+		System.out.println(numeros.stream().filter(num -> num == 25).count());
 	}
 }
