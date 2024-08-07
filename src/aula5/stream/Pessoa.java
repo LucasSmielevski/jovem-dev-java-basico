@@ -28,7 +28,15 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
-    @Override
+    public String getTelefone() {
+		return telefone;
+	}
+
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	@Override
     public String toString() {
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
@@ -36,6 +44,7 @@ public class Pessoa {
                 ", dataNascimento=" + dataNascimento +
                 '}';
     }
+
 	
 }
 

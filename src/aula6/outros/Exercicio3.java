@@ -10,7 +10,7 @@ public class Exercicio3 {
 
 	public Exercicio3() {
 		for (Calculadora2Enum c : Calculadora2Enum.values()) {
-			System.out.println(c.getNomeAmigavel() + " Resultado: " + c.getCalculo());
+			System.out.println(c.getNomeAmigavel() + " Resultado: " + c.getCalculo().apply(5, 2));
 		}
 	}
 
