@@ -2,6 +2,7 @@ package aula5.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import aula5.stream.exceptions.ZeroBertoException;
 
@@ -20,12 +21,12 @@ public class Exercicio5 {
 		nomes.add("Lucas");
 		nomes.add("Lucas");
 
-		try {
-			System.out.println(nomes.stream()
-					.filter(nome -> nome.endsWith("berto"))
-					.findFirst().orElseThrow(() -> new ZeroBertoException("Nenhum resultado encontrado")));
-		} catch (ZeroBertoException e) {
-				System.out.println(e.getMessage());
-		}
+	}
+
+	public String buscaPrimeiroNomeTerminadoEmBerto(List<String> lista) {
+
+		return lista.stream().filter(Objects::nonNull).filter(nome -> nome.endsWith("berto")).findFirst()
+				.orElseThrow(() -> new ZeroBertoException("Nenhum resultado encontrado"));
+
 	}
 }

@@ -25,18 +25,26 @@ public class Desafio {
 		pessoas.add(new Pessoa("Amanda", LocalDate.parse("1997-05-09")));
 		pessoas.add(new Pessoa("Igor", LocalDate.parse("2024-11-21")));
 		pessoas.add(new Pessoa("Juliana", LocalDate.parse("1989-07-07")));
-		
-		 List<String> nomesFiltrados = pessoas.stream()
-		            .filter(pessoa -> começaVogal(pessoa.nome)||Year.isLeap(pessoa.dataNascimento.getYear()))
-		            .map(Pessoa::getNome).sorted((n1, n2) -> n2.compareTo(n1))
-		            .collect(Collectors.toList());
-		 	 
-		 nomesFiltrados.forEach(System.out::println);
+//
+//		List<String> nomesFiltrados = pessoas.stream()
+//				.filter(pessoa -> começaVogal(pessoa.nome) || Year.isLeap(pessoa.dataNascimento.getYear()))
+//				.map(Pessoa::getNome).sorted((n1, n2) -> n2.compareTo(n1)).collect(Collectors.toList());
+//
+//		nomesFiltrados.forEach(System.out::println);
 	}
-	
-	 private static boolean começaVogal(String nome) {
-	        char primLetra = Character.toLowerCase(nome.charAt(0));
-	        return primLetra == 'a' || primLetra == 'e' || primLetra== 'i' || primLetra== 'o' || primLetra== 'u';
-	    }
+
+	public static boolean começaVogal(String nome) {
+		char primLetra = Character.toLowerCase(nome.charAt(0));
+		return primLetra == 'a' || primLetra == 'e' || primLetra == 'i' || primLetra == 'o' || primLetra == 'u';
+	}
+
+	public List<String> nomesQueComecamComVogalOuNasceramEmAnoBissexto(List<Pessoa> pessoas) {
+
+		List<String> nomesFiltrados = pessoas.stream()
+				.filter(pessoa -> começaVogal(pessoa.nome) || Year.isLeap(pessoa.dataNascimento.getYear()))
+				.map(Pessoa::getNome).sorted((n1, n2) -> n2.compareTo(n1)).collect(Collectors.toList());
+		return nomesFiltrados;
+
+	}
 
 }

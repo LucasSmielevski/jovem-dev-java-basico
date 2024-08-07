@@ -3,7 +3,6 @@ package aula5.stream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class Exercicio3 {
 	public static void main(String[] args) {

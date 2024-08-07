@@ -3,9 +3,9 @@ package aula5.stream;
 import java.time.LocalDate;
 
 public class Pessoa {
-	String nome;
+	public String nome;
 	String telefone;
-	LocalDate dataNascimento;
+	public LocalDate dataNascimento;
 	
 	public Pessoa(String nome, String telefone, LocalDate dataNascimento) {
 		super();
