@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -49,7 +50,7 @@ class Desafio6Test {
 
 	    @DisplayName("Deve retornar um IllegalArgumentException se tiver um tipo invalido de evento")
 	    @Test
-	    void testEventoInvalido() {
+	    void EventoInvalido() {
 	        assertThrows(IllegalArgumentException.class, () -> {
 	            TipoEventoEnum tipoInvalido = TipoEventoEnum.valueOf("INEXISTENTE");
 	        });
@@ -57,7 +58,7 @@ class Desafio6Test {
 	    
 	    @DisplayName("Deve retornar uma lista vazia quando não houver eventos do tipo especificado.")
 	    @Test
-	    void testEventoNaoExistenteNaLista() {
+	    void EventoNaoExistenteNaLista() {
 	        TipoEventoEnum tipoEventoNaoExistente = TipoEventoEnum.OUTROS;
 	        List<Evento> resultado = desafio.filtrarEventosPorTipo(eventos, tipoEventoNaoExistente);
 	        assertTrue(resultado.isEmpty());
@@ -65,7 +66,7 @@ class Desafio6Test {
 
 	    @DisplayName("Deve retornar exatamente 2 eventos do tipo LAZER.")
 	    @Test
-	    void testRetornandoApenasEventosDeUmaCategoria() {
+	    void RetornandoApenasEventosDeUmaCategoria() {
 	        TipoEventoEnum tipoProfissional = TipoEventoEnum.LAZER;
 	        List<Evento> eventosProfissionais = desafio.filtrarEventosPorTipo(eventos, tipoProfissional);
 	        assertEquals(2, eventosProfissionais.size());
@@ -73,15 +74,16 @@ class Desafio6Test {
 
 	    @DisplayName("Deve haver eventos futuros e já ocorridos.")
 	    @Test
-	    void testRetornandoEventosDeAmbasAsCategorias() {
+	    void RetornandoEventosDeAmbasAsCategorias() {
 	        TipoEventoEnum tipoLazer = TipoEventoEnum.LAZER;
 	        List<Evento> eventosLazer = desafio.filtrarEventosPorTipo(eventos, tipoLazer);
 
 	        List<Evento> eventosFuturos = desafio.obterEventosFuturos(eventosLazer);
 	        List<Evento> eventosJaOcorridos = desafio.obterEventosJaOcorridos(eventosLazer);
 
-	        assertTrue(eventosFuturos.size() > 0);
-	        assertTrue(eventosJaOcorridos.size() > 0);
+	        assertTrue(!eventosFuturos.isEmpty());
+	        assertTrue(!eventosJaOcorridos.isEmpty());
+	        
 	    }
 
 }
