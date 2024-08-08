@@ -20,7 +20,7 @@ public class Evento {
 	@Override
 	public String toString() {
 		return "Evento : "
-				+ "\ndescricao= " + descricao + ", data e Hora= " + dataHora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + ", tipoEvento= " + tipoEvento.getDescricao() + "";
+				+ "\ndescricao: " + descricao + "\ndata e Hora: " + dataHora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")) + ", tipoEvento: " + tipoEvento.getDescricao() + "";
 	}
 	
 	
