@@ -30,7 +30,7 @@ public class Desafio {
 //				.filter(pessoa -> começaVogal(pessoa.nome) || Year.isLeap(pessoa.dataNascimento.getYear()))
 //				.map(Pessoa::getNome).sorted((n1, n2) -> n2.compareTo(n1)).collect(Collectors.toList());
 //
-//		nomesFiltrados.forEach(System.out::println);
+//				System.out.println(nomesFiltrados.stream().collect(Collectors.joining(";"))); 
 	}
 
 	public static boolean começaVogal(String nome) {
