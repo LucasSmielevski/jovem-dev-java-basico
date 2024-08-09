@@ -1,9 +1,11 @@
-package aula6.outros.enums;
+package aula7.testes;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import aula6.outros.enums.Calculadora2Enum;
 
 class Calculadora2EnumTest {
 
